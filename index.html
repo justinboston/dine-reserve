@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeatServe - Your Restaurant Reservations</title>
+    <style>
+        /* General body styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header styles */
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Main section styles */
+        main {
+            padding: 20px;
+            background: white;
+            margin: 20px;
+            border-radius: 8px;
+        }
+
+        section {
+            margin-bottom: 20px;
+        }
+
+        /* Form styles */
+        form {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="datetime-local"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+
+        button {
+            background: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #4cae4c;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 10px 20px;
+            background: #333;
+            color: white;
+        }
+
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reservation">Make a Reservation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to SeatServe</h1>
+            <p>Book your table easily and conveniently with SeatServe, your go-to restaurant reservation service.</p>
+        </section>
+        <section id="reservation">
+            <h2>Make a Reservation</h2>
+            <form action="#" method="POST">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <input type="datetime-local" id="datetime" name="datetime" required>
+                <textarea id="requests" name="requests" placeholder="Special Requests"></textarea>
+                <button type="submit">Book Table</button>
+            </form>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: info@seatserve.com | Phone: +123 456 7890</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 SeatServe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
