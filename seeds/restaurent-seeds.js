@@ -22,11 +22,11 @@ async function seedDatabase() {
 
     // Seed Reservations
     await Reservation.bulkCreate([
-        { date: new Date('2024-05-01'), time: '19:00', guests: 2, userId: users[0].id, restaurantId: restaurants[0].id },
-        { date: new Date('2024-05-03'), time: '12:00', guests: 4, userId: users[1].id, restaurantId: restaurants[1].id },
-        { date: new Date('2024-05-04'), time: '18:00', guests: 3, userId: users[0].id, restaurantId: restaurants[2].id },
-        { date: new Date('2024-05-05'), time: '20:00', guests: 1, userId: users[1].id, restaurantId: restaurants[3].id },
-        { date: new Date('2024-05-06'), time: '15:00', guests: 2, userId: users[1].id, restaurantId: restaurants[4].id },
+        { date: new Date('2024-05-01'), time: '19:00', guests: 2, user_id: users[0].id, restaurant_id: restaurants[0].id },
+        { date: new Date('2024-05-03'), time: '12:00', guests: 4, user_id: users[1].id, restaurant_id: restaurants[1].id },
+        { date: new Date('2024-05-04'), time: '18:00', guests: 3, user_id: users[0].id, restaurant_id: restaurants[2].id },
+        { date: new Date('2024-05-05'), time: '20:00', guests: 1, user_id: users[1].id, restaurant_id: restaurants[3].id },
+        { date: new Date('2024-05-06'), time: '15:00', guests: 2, user_id: users[1].id, restaurant_id: restaurants[4].id },
     ]);
 
     console.log('Database seeded successfully!');
