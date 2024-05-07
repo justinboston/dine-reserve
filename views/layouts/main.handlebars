@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dine Reserve</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body>
+  <div class="wrapper">
+		<header>
+			<h1>
+				<a href="/">Dine Reserve</a>
+			</h1>
+			<nav>
+				<!-- Conditionally render login or logout links -->
+                {{#if logged_in}}
+				<button id="logout" class="btn-no-style">Logout</button>
+				{{else}}
+				<a href="/login">Login</a>
+				<a href="/signup">Sign Up</a>
+				{{/if}}
+			</nav>    
+		</header>
+		
+		<main>
+			{{{ body }}}
+		</main>
+		
+		<footer>
+    </footer>
+	</div>
+		
+	{{#if loggedIn}}
+		<script src="/javascript/logout.js"></script>
+		{{/if}}
+		
+</body>
+	
+</html>

@@ -1,18 +1,24 @@
-const User = require('./User');
-const Reservation = require('./Reservations');
-const Resturant = require('./Resturants');
+const sequelize = require('../config/connection'); 
+const User = require('./User')(sequelize);
+const Restaurant = require('./Restaurant')(sequelize);
+const Reservation = require('./Reservation')(sequelize);
+const Review = require('./Review')(sequelize);
+const Post = require('./Post')(sequelize);
 
-// Creates a relationship between User and Project model, with the User having a "has many" relationship with Project model.
-User.belongsToMany(Resturant, {
-  through:Reservation,
-    foreignKey: 'user_id',
-//   onDelete: 'CASCADE'
-});
 
-// Creates a relationship between User and Project model, with a "belongs to" relationship of the Project to the User.
-Resturant.belongsToMany(User, {
-    through:Reservation,
-     foreignKey: 'resturant_id'
-});
+User.hasMany(Post, { foreignKey: 'userId' });
+Post.belongsTo(User, { foreignKey: 'userId' });
 
-module.exports = { User, Reservation, Resturant };
+User.hasMany(Reservation, { foreignKey: 'userId' });
+Reservation.belongsTo(User, { foreignKey: 'userId' });
+
+Restaurant.hasMany(Reservation, { foreignKey: 'restaurantId' });
+Reservation.belongsTo(Restaurant, { foreignKey: 'restaurantId' });
+
+Restaurant.hasMany(Review, { foreignKey: 'restaurantId' });
+Review.belongsTo(Restaurant, { foreignKey: 'restaurantId' });
+
+User.hasMany(Review, { foreignKey: 'userId' });
+Review.belongsTo(User, { foreignKey: 'userId' });
+
+module.exports = { User, Restaurant, Reservation, Review, Post, sequelize };

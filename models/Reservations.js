@@ -18,10 +18,10 @@ Reservation.init(
       allowNull: false,
     },
     
-    resturant_id: {
+    restaurant_id: {
         type: DataTypes.INTEGER,
         references: {
-          model: 'resturant',
+          model: 'restaurant',
           key: 'id',
         },
     },

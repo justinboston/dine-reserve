@@ -1,0 +1,26 @@
+<h1>This is the restaurant page</h1>
+
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{user.name}}!</h2>
+  </div>
+</div>
+
+  {{#if restaurants.length}}
+  <ul class="collection">
+    <h3>Restaurants:</h3>
+
+    {{#each restaurants as |restaurant|}}
+    <li class="collection-item avatar">
+      <img src="{{restaurant.image}}" alt="" class="circle">
+      <span class="title">"{{restaurant.name}}"</span>
+      <p>"{{restaurant.address}}"<br>
+         "{{reservation.time}}"
+      </p>
+    </li>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
