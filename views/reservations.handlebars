@@ -1,13 +1,15 @@
+
 <div class="row">
-  <div class="col-auto">
+  <div class="restaurants-header">
     <h2>Welcome, {{user.name}}!</h2>
   </div>
 </div>
 
   {{#if reservations.length}}
   <ul class="collection">
+    <div class="restaurants-h3">
     <h3>Current Reservations:</h3>
-
+</div>
     {{#each reservations as |reservation|}}
     <li class="collection-item avatar">
       <img src="{{reservation.restaurant.image}}" alt="" class="circle">
@@ -22,4 +24,4 @@
   {{/if}}
 </div>
 
-<script src="./js/profile.js"></script>
+<script src="./js/reservations.js"></script>
