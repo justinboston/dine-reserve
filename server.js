@@ -9,7 +9,7 @@ const db = require('./config/connection');
 const { User, Post, Restaurant,Reservation,Review } = require('./models');
 
 const app = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3031;
 // Setup Handlebars with custom helpers
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
