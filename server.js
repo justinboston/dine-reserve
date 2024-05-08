@@ -1,4 +1,3 @@
-
 const express = require('express');
 const session = require('express-session');
 //const exphbs = require('express-handlebars');
@@ -6,10 +5,10 @@ const path = require('path');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const db = require('./config/connection');
-const { User, Post, Restaurant,Reservation,Review } = require('./models');
+const { User, Post, Comment } = require('./models');
 
 const app = express();
-const PORT = process.env.PORT || 3030;
+const PORT = process.env.PORT || 3001;
 // Setup Handlebars with custom helpers
 const exphbs = require('express-handlebars');
 const hbs = exphbs.create({
@@ -70,14 +69,17 @@ app.get('/', async (req, res) => {
   }
 });
 
-// // Routes
- const userRoutes = require('./routes/loginRoute');
- const reservationRoutes = require('./routes/ReservationRoutes');
- const restaurantRoutes = require('./routes/restaurantsRoute');
+// More specific routes could be defined here
+const userRoutes = require('./controllers/userController');
+//const postRoutes = require('./controllers/postRoutes');
+//const reservationController = require('./controllers/reservationController');
 
- app.use('/', userRoutes);
- app.use('/reservations', reservationRoutes);
- app.use('/restaurants', restaurantRoutes);
+//const dashboardRoutes = require('./controllers/dashboardController');
+app.use('/', userRoutes);
+//app.use('/reservationList', reservationController);
+//app.use('/posts', postRoutes);
+//app.use('/comments', commentRoutes);
+//app.use('/dashboard', dashboardRoutes);
 
 
 // Sync database and start the server
@@ -86,67 +88,3 @@ db.sync({ force: false }).then(() => {
 }).catch(err => {
     console.error('Failed to sync db: ' + err.message);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const express = require('express');
-// const session = require('express-session');
-// //const exphbs = require('express-handlebars');
-// const path = require('path');
-// const SequelizeStore = require('connect-session-sequelize')(session.Store);
-
-// const db = require('./config/connection');
-// const { User, Post, Comment } = require('./models');
-
-// const app = express();
-// const PORT = process.env.PORT || 3037;
-
-
-// // Middleware
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// // Handlebars setup
-// app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-// app.set('view engine', 'handlebars');
-
-// // Session setup
-// app.use(session({
-//   secret: 'your_secret_key',
-//   resave: false,
-//   saveUninitialized: true,
-//   cookie: { secure: false } // Set to true if using HTTPS
-// }));
-
-// // Routes
-// const userRoutes = require('./routes/userRoutes');
-// const reservationRoutes = require('./routes/reservationRoutes');
-// const restaurantRoutes = require('./routes/restaurantRoutes');
-
-// app.use('/', userRoutes);
-// app.use('/reservations', reservationRoutes);
-// app.use('/restaurants', restaurantRoutes);
-
-// // Start server
-// app.listen(PORT, () => {
-//   console.log(`Server is running on port ${PORT}`);
-// });
