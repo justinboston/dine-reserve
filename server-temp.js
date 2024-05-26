@@ -59,11 +59,6 @@ app.get("/reservations", (req, res) => {
                     name: 'Pasta House', type: 'Italian', address: '321 Maple St', image: 'https://d2sygdwsqncsjz.cloudfront.net/364245.jpg'
                 }
             },
-            {
-                date: new Date('2024-05-05'), time: '20:00', guests: 1, restaurant: {
-                    name: 'Sushi World, type: 'Japanese', address: '789 Pine St', image: 'https://media.timeout.com/images/106013795/750/422/image.jpg'
-                }
-            },
         ]
     })
 })
