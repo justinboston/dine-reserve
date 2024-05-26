@@ -11,18 +11,20 @@
 
 <body>
   <div class="wrapper">
-	 <header>
-        <h1><a href="/">Dine Reserve</a></h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/signup">SignUp</a></li>
-                <li><a href="/logout" id="logout-link">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-
+		<header>
+			<h1>
+				<a href="/">Dine Reserve</a>
+			</h1>
+			<nav>
+				<!-- Conditionally render login or logout links -->
+                {{#if logged_in}}
+				<button id="logout" class="btn-no-style">Logout</button>
+				{{else}}
+				<a href="/login">Login</a>
+				<a href="/login">Sign Up</a>
+				{{/if}}
+			</nav>    
+		</header>
 		
 		<main>
 			{{{ body }}}
@@ -35,7 +37,12 @@
             </div>
           </div>
     </footer>
-	 <script src="/main.js"></script>	
+	</div>
+		
+	{{#if loggedIn}}
+		<script src="/javascript/logout.js"></script>
+		{{/if}}
+		
 </body>
 	
 </html>
