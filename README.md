@@ -74,6 +74,7 @@ Once a restaurant and available dining time is selected, your reservation should
 <li><a href="https://github.com/UmmulColumbia">Ummul Mukta</a></li>
 <li><a href="https://github.com/Igimbayeva">Dinara Igimbayeva</a></li>
 <li><a href="https://github.com/kamranana">Ana Kamran</a></li>
+<li><a href="https://github.com/zullypaz">Zully Paz</a></li>
 </ul>
 
 ## Liscense
